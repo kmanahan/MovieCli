@@ -4,8 +4,8 @@ class MoviesCli::CLI
     MoviesCli::API.new.fetch 
     MoviesCli::Movies.all.each do |movie| 
       puts movie.name
-    end 
-  end 
+    end
+  end
   
   def start 
     puts "Welcome"
