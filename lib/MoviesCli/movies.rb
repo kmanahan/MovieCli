@@ -1,18 +1,19 @@
 class MoviesCli::Movies 
-  attr_accessor :name
+  attr_accessor :title, :release_date, :overview
   @@all = [] 
   
-    def initialize(name) 
-      @name = name
+    def initialize(title, release_date) 
+      @title = title
+      @release_date = release_date
       @@all << self 
     end 
   
     def self.all
-      #binding.pry
       @@all 
     end 
    
-    def name
-      @name
+    def overview 
+      @overview 
     end 
+   
   end

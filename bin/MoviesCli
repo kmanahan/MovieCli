@@ -2,4 +2,4 @@
 
 require_relative "../lib/MoviesCli" 
 
-MoviesCli::CLI.new.call
+MoviesCli::CLI.new.greeting
