@@ -1,8 +1,8 @@
-class MovieCli::CLI 
+class MoviesCli::CLI 
   
   def call 
-    MovieCli::API.new.fetch 
-    MovieCli::Movies.all.each do |movie| 
+    MoviesCli::API.new.fetch 
+    MoviesCli::Movies.all.each do |movie| 
       puts movie.name 
     end 
   end 

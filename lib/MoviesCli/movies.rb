@@ -1,4 +1,4 @@
-class MovieCli::Movies 
+class MoviesCli::Movies 
   attr_accessor :name 
   @@all = [] 
   
@@ -15,3 +15,5 @@ class MovieCli::Movies
     def name 
       @name 
     end 
+    
+  end
