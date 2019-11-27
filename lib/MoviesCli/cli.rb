@@ -10,12 +10,21 @@ class MoviesCli::CLI
     puts ""
     
     call
+    
+    movie_title
+    release_date
   end 
   
-    def list_movie 
+    def movie_title 
     MoviesCli::API.new.fetch 
     MoviesCli::Movies.all.each do |movie| 
       puts movie.title
+      end
+    end 
+    
+    def release_date 
+    MoviesCli::Movies.all.each do |movie| 
+      puts movie.release_date
       end
     end 
     
