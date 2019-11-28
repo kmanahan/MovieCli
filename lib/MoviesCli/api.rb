@@ -6,10 +6,10 @@ class MoviesCli::API
     #binding.pry
     response["results"].each do |movie| 
       title = movie["title"]
-      popularity = movie["popularity"]
+      #popularity = movie["popularity"]
       # overview = movie["overview"]
       # release_date = movie["release_date"]
-      MoviesCli::Movies.new(popularity, title)
+      MoviesCli::Movies.new(title)
     end
   end 
 end 

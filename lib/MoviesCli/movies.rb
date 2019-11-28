@@ -2,9 +2,9 @@ class MoviesCli::Movies
   attr_accessor :title, :release_date, :overview
   @@all = [] 
   
-    def initialize(title, release_date) 
+    def initialize(title) 
       @title = title
-      @release_date = release_date
+      #@release_date = release_date
       @@all << self 
     end 
   

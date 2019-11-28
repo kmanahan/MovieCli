@@ -6,13 +6,10 @@ class MoviesCli::CLI
   
   def start 
     puts ""
-    puts " Hello and welcome to my Movie CLI"
+    puts " Hello and welcome to my Movie CLI.\n\n Here are the top box office movies:"
     puts ""
     
-    call
-    
     movie_title
-    release_date
   end 
   
     def movie_title 
