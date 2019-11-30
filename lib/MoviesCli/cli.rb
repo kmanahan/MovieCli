@@ -2,20 +2,20 @@ class MoviesCli::CLI
   
   def greeting
     start
+    call
   end
   
   def start 
     puts ""
     puts " Hello and welcome to my Movie CLI.\n\n Here are the top box office movies:"
     puts ""
-    
-    movie_title
   end 
   
     def movie_title 
     MoviesCli::API.new.fetch 
-    MoviesCli::Movies.all.each do |movie| 
-      puts movie.title
+    @movies = MoviesCli::Movies.all
+    @movies.each.with_index(1) do |movie, i|
+      puts "#{i}. #{movie.title}"
       end
     end 
     
@@ -29,7 +29,7 @@ class MoviesCli::CLI
       puts ""
       puts "  Here is some movie information"
       puts ""
-      
+      movie_title
     end 
   
 end 
