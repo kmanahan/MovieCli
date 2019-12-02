@@ -1,4 +1,4 @@
-class MoviesCli::Movies 
+class Movies 
   attr_accessor :title, :release_date, :overview
   @@all = [] 
   
@@ -12,10 +12,9 @@ class MoviesCli::Movies
   def self.all
     @@all 
   end 
-    
-  #create a find by name method
+  
   def self.find_by_name(title)
-  @@all.detect{|a| a.title == title}
-  end
+    self.all.find {|movie| movie.title == title}
+  end 
   
 end

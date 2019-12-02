@@ -1,19 +1,22 @@
-class MoviesCli::CLI 
+class CLI 
   
   def start 
     puts ""
     puts " Welcome.\n\n To view the top box office movies sorted by popularity type \"movies\".\n\n Then enter the number of the movie you would like more information on. \n\n To leave press exit."
     puts ""
-    
     menu
   end 
   
   def movie_list
-    MoviesCli::API.new.fetch 
-    @movies = MoviesCli::Movies.all
+    API.new.fetch 
+    @movies = Movies.all
     @movies.each.with_index(1) do |movie, i|
     puts "#{i}. #{movie.title}"
     end
+  end
+  
+  def search
+    Movies.find_by_name(movie)
   end 
     
   def menu
@@ -28,6 +31,9 @@ class MoviesCli::CLI
         puts "Title: #{the_movie.title}\nReleased: #{the_movie.release_date}\nOverview: #{the_movie.overview}"
       elsif input == "movies"
         movie_list 
+      #if input is == to keyword
+      # elsif input == 
+      #   search
       elsif input == "exit"
         puts ""
         puts "Goodbye!"
