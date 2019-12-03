@@ -1,8 +1,7 @@
 # MoviesCli
 
-Welcome to your new gem! In this directory, you'll find the files you need to be able to package up your Ruby library into a gem. Put your Ruby code in the file `lib/MoviesCli`. To experiment with that code, run `bin/console` for an interactive prompt.
-
-TODO: Delete this and the text above, and describe your gem
+Welcome to MoviesCli. This application allows you to view a list of the movies sorted by popularity. Enter `movies` to generate a list of movies.
+To search for movies by name enter `search`. To exit enter `exit`.
 
 ## Installation
 
@@ -22,7 +21,9 @@ Or install it yourself as:
 
 ## Usage
 
-TODO: Write usage instructions here
+To run the CLI:
+
+    bin/MoviesCli
 
 ## Development
 

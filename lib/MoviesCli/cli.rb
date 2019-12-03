@@ -18,9 +18,11 @@ class CLI
   def find_title
     puts "Please enter movie name"
     input = gets.strip
-
     if movie = Movies.find_by_name(input)
       puts "Title: #{movie.title}\nReleased: #{movie.release_date}\nOverview: #{movie.overview}"
+    
+    else
+      puts "movie not found type \"search\" again to enter a valid title."
     end
   end
 
