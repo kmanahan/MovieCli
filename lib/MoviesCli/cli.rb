@@ -2,7 +2,7 @@ class CLI
   
   def start 
     puts ""
-    puts " Welcome.\n\n To view the top box office movies sorted by popularity type \"movies\".\n\n Then enter the number of the movie you would like more information on. \n\n To leave press exit."
+    puts " Welcome.\n\n To view the top movies sorted by popularity type \"movies\".\n\n Then enter the number of the movie you would like more information on. \n\n To search by movie name type \"search\". \n\n To leave press exit."
     puts ""
     API.new.fetch
     menu
@@ -20,22 +20,10 @@ class CLI
     input = gets.strip
 
     if movie = Movies.find_by_name(input)
-      movie.title.each{|a| a.name == name}.each.with_index(1) do |s,i|
-      puts "#{s.name}"
-     end
+      puts "Title: #{movie.title}\nReleased: #{movie.release_date}\nOverview: #{movie.overview}"
     end
   end
-  # def list_songs_by_artist
-  #   puts "Please enter the name of an artist:"
-  #   input = gets.strip
 
-  #   if artist = Artist.find_by_name(input)
-  #     artist.songs.sort{|a, b| a.name <=> b.name}.each.with_index(1) do |s, i|
-  #     puts "#{i}. #{s.name} - #{s.genre.name}"
-  #   end
-  #   end
-  # end
-    
   def menu
     input = nil
     while input != "exit"
@@ -59,5 +47,4 @@ class CLI
       end
     end
   end
-  
 end
