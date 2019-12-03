@@ -4,20 +4,37 @@ class CLI
     puts ""
     puts " Welcome.\n\n To view the top box office movies sorted by popularity type \"movies\".\n\n Then enter the number of the movie you would like more information on. \n\n To leave press exit."
     puts ""
+    API.new.fetch
     menu
   end 
   
   def movie_list
-    API.new.fetch 
     @movies = Movies.all
     @movies.each.with_index(1) do |movie, i|
     puts "#{i}. #{movie.title}"
     end
   end
   
-  def search
-    Movies.find_by_name(movie)
-  end 
+  def find_title
+    puts "Please enter movie name"
+    input = gets.strip
+
+    if movie = Movies.find_by_name(input)
+      movie.title.each{|a| a.name == name}.each.with_index(1) do |s,i|
+      puts "#{s.name}"
+     end
+    end
+  end
+  # def list_songs_by_artist
+  #   puts "Please enter the name of an artist:"
+  #   input = gets.strip
+
+  #   if artist = Artist.find_by_name(input)
+  #     artist.songs.sort{|a, b| a.name <=> b.name}.each.with_index(1) do |s, i|
+  #     puts "#{i}. #{s.name} - #{s.genre.name}"
+  #   end
+  #   end
+  # end
     
   def menu
     input = nil
@@ -31,9 +48,8 @@ class CLI
         puts "Title: #{the_movie.title}\nReleased: #{the_movie.release_date}\nOverview: #{the_movie.overview}"
       elsif input == "movies"
         movie_list 
-      #if input is == to keyword
-      # elsif input == 
-      #   search
+      elsif input == "search"
+        find_title
       elsif input == "exit"
         puts ""
         puts "Goodbye!"
