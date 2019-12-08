@@ -45,7 +45,7 @@ class CLI
         puts "Goodbye!"
         puts ""
       else
-        puts "Invalid entry please type list or exit."
+        puts "Invalid entry please type movies or exit."
       end
     end
   end
